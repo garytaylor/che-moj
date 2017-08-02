@@ -38,4 +38,4 @@ WORKDIR /projects
 
 ADD supervisord.conf /opt/
 EXPOSE 6080
-CMD /usr/bin/supervisord -c /opt/supervisord.conf && tail -f /dev/null
+CMD /usr/bin/supervisord -c /opt/supervisord.conf && /usr/local/Rubymine-2017.2/bin/rubymine.sh
