@@ -6,7 +6,7 @@
 # Contributors:
 # Codenvy, S.A. - initial API and implementation
 
-FROM ministryofjustice/ruby:2.3.3-webapp-onbuild
+FROM eclipse/stack-base:ubuntu
 
 RUN sudo apt-get update && \
     sudo apt-get install -y --no-install-recommends supervisor x11vnc xvfb net-tools blackbox rxvt-unicode xfonts-terminus libxi6 libgconf-2-4
