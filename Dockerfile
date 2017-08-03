@@ -33,6 +33,7 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 6.11.2
 
+USER root
 # Install nvm with node and npm
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash \
     && source $NVM_DIR/nvm.sh \
