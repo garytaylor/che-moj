@@ -29,9 +29,6 @@ RUN /bin/bash -c "source /home/user/.rvm/scripts/rvm"
 RUN /bin/bash --login -c "rvm install ruby-2.3.3"
 
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
-RUN /bin/bash --login -c "source ~/.profile"
-RUN /bin/bash --login -c "nvm install 6.11.2"
-RUN /bin/bash --login -c "npm install -g phantomjs"
 
 USER root
 WORKDIR /usr/local
