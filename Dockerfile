@@ -28,7 +28,16 @@ RUN curl -sSL https://get.rvm.io | bash -s stable
 RUN /bin/bash -c "source /home/user/.rvm/scripts/rvm"
 RUN /bin/bash --login -c "rvm install ruby-2.3.3"
 
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+
+#change it to your required node version
+ENV NODE_VERSION 6.11.2
+
+#needed by nvm install
+ENV NVM_DIR /home/user/.nvm
+
+#install the specified node version and set it as the default one, install the global npm packages
+RUN . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION && npm install -g phantomjs --user "user"
 
 USER root
 WORKDIR /usr/local
